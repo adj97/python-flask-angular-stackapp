@@ -1,0 +1,7 @@
+services:
+  api:
+    build:
+      context: api/
+  gui:
+    build:
+      context: gui/
