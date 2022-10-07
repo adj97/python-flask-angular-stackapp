@@ -4,9 +4,15 @@ services:
     build:
       context: api/
     ports:
-      - "5000:5000"
+      - "5001:5001"
+    expose:
+      - "5001"
+    volumes:
+      - ./api/:/app
   gui:
     build:
       context: gui/
     ports:
       - "4200:4200"
+    expose:
+      - "4200"
