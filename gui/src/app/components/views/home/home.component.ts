@@ -16,9 +16,11 @@ export class HomeComponent implements OnInit {
   }
 
   getapioutput(){
-    this.http.get(window.location.protocol + '//' + window.location.hostname + ':' + 5001 + '/really/very/long/api/route')
+    const url = window.location.protocol + '//' + window.location.hostname + ':' + 5001 + '/really/very/long/api/route'
+    this.http.get(url)
       .subscribe((res: object) => {
         this.apioutput = res["msg" as keyof Object];
+        console.log(url)
         console.log(res)});
   }
 
